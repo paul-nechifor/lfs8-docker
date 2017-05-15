@@ -1,0 +1,38 @@
+#!/bin/bash -e
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+export user="${user:-u}"
+
+main() {
+    local cmd="command_$1"
+    if is_function "$cmd"; then
+        die "'$1' isn't a command"
+    fi
+    shift
+    "$cmd" "$@"
+}
+
+die() {
+    tput setaf 1 || true
+    echo "$@"
+    exit 1
+    tput sgr0 || true
+}
+
+is_function() {
+    # I'm using that grep because grepping for 'function' won't work if you're
+    # using a different language.
+    type "$1" &>/dev/null | grep "^$1 ()"
+}
+
+command_get_sources() {
+    cd "$script_dir"
+    mkdir -p sources
+    wget --input-file="res/wget-list" --continue --directory-prefix="sources"
+    pushd sources
+    md5sum -c ../res/md5sums || die bad sources
+    popd
+}
+
+main "$@"
