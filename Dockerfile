@@ -2,16 +2,14 @@ FROM debian:8
 
 ENV LFS=/mnt/lfs
 
-RUN apt-get -q update && \
-    apt-get -q -y install build-essential bison gawk texinfo wget file && \
-    apt-get -q -y autoremove && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -f /bin/sh && \
-    cd /bin && \
-    ln -s bash sh && \
-    mkdir -p /src
+COPY src/provision /tmp/provision
+RUN /tmp/provision
+COPY src/version-check /src/version-check
+RUN /src/version-check
+COPY src/create-dirs-and-user /src/create-dirs-and-user
+RUN /src/create-dirs-and-user
 
-COPY build /src/build
-COPY sources /src/sources
+USER lfs
 
-RUN /src/build version_check
+COPY src/setup-user /src/setup-user
+RUN /src/setup-user
