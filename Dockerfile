@@ -26,3 +26,11 @@ RUN /src/binutils-pass1
 COPY sources/gcc-6.3.0.tar.bz2 sources/mpfr-3.1.5.tar.xz sources/gmp-6.1.2.tar.xz sources/mpc-1.0.3.tar.gz $LFS/sources/
 COPY src/gcc-pass1 /src
 RUN /src/gcc-pass1
+
+COPY sources/linux-4.9.9.tar.xz $LFS/sources/
+COPY src/linux-api-headers /src
+RUN /src/linux-api-headers
+
+COPY sources/glibc-2.25.tar.xz $LFS/sources/
+COPY src/glibc /src
+RUN /src/glibc
