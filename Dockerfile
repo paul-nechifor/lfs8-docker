@@ -13,3 +13,16 @@ USER lfs
 
 COPY src/setup-user /src/setup-user
 RUN /src/setup-user
+
+ENV  LC_ALL=POSIX \
+  LFS_TGT=x86_64-lfs-linux-gnu \
+  PATH=/tools/bin:/bin:/usr/bin \
+  MAKEFLAGS="-j 8"
+
+COPY sources/binutils-2.27.tar.bz2 $LFS/sources
+COPY src/binutils-pass1 /src
+RUN /src/binutils-pass1
+
+COPY sources/gcc-6.3.0.tar.bz2 sources/mpfr-3.1.5.tar.xz sources/gmp-6.1.2.tar.xz sources/mpc-1.0.3.tar.gz $LFS/sources/
+COPY src/gcc-pass1 /src
+RUN /src/gcc-pass1
