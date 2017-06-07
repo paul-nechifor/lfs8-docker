@@ -37,3 +37,6 @@ RUN /src/glibc
 
 COPY src/libstdcpp /src
 RUN /src/libstdcpp
+
+COPY src/binutils-pass2 /src
+RUN /src/binutils-pass2
