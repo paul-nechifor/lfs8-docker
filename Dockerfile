@@ -34,3 +34,6 @@ RUN /src/linux-api-headers
 COPY sources/glibc-2.25.tar.xz $LFS/sources/
 COPY src/glibc /src
 RUN /src/glibc
+
+COPY src/libstdcpp /src
+RUN /src/libstdcpp

@@ -1,9 +1,8 @@
 #!/bin/bash -e
 
 tar -xf "$LFS"/sources/linux-*.tar.xz -C /tmp/
-pushd /tmp/linux-*
+cd /tmp/linux-*
 make mrproper
 make INSTALL_HDR_PATH=dest headers_install
 cp -rv dest/include/* /tools/include
-popd
 rm -rf /tmp/*
