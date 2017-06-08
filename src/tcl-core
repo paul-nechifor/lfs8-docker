@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/tcl-core*-src.tar.gz -C /tmp/
+
+cd /tmp/tcl*/unix
+./configure --prefix=/tools
+make
+make install
+chmod -v u+w /tools/lib/libtcl8.6.so
+make install-private-headers
+ln -sv tclsh8.6 /tools/bin/tclsh
+
+rm -rf /tmp/*

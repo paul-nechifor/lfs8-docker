@@ -43,3 +43,7 @@ RUN /src/binutils-pass2
 
 COPY src/gcc-pass2 /src
 RUN /src/gcc-pass2
+
+COPY sources/tcl-core8.6.6-src.tar.gz $LFS/sources/
+COPY src/tcl-core /src
+RUN /src/tcl-core
