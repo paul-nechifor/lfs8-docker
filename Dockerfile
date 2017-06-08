@@ -47,3 +47,7 @@ RUN /src/gcc-pass2
 COPY sources/tcl-core8.6.6-src.tar.gz $LFS/sources/
 COPY src/tcl-core /src
 RUN /src/tcl-core
+
+COPY sources/expect5.45.tar.gz $LFS/sources/
+COPY src/expect /src
+RUN /src/expect
