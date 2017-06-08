@@ -51,3 +51,7 @@ RUN /src/tcl-core
 COPY sources/expect5.45.tar.gz $LFS/sources/
 COPY src/expect /src
 RUN /src/expect
+
+COPY sources/dejagnu-1.6.tar.gz $LFS/sources/
+COPY src/dejagnu /src
+RUN /src/dejagnu

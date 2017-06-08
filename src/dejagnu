@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/dejagnu-*.tar.gz -C /tmp/
+cd /tmp/dejagnu*
+
+./configure --prefix=/tools
+make install
+
+rm -rf /tmp/*
