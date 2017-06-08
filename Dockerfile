@@ -40,3 +40,6 @@ RUN /src/libstdcpp
 
 COPY src/binutils-pass2 /src
 RUN /src/binutils-pass2
+
+COPY src/gcc-pass2 /src
+RUN /src/gcc-pass2
