@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/check-*.tar.gz -C /tmp/
+cd /tmp/check-*
+
+PKG_CONFIG='' ./configure --prefix=/tools
+
+make
+make install
+
+rm -rf /tmp/*

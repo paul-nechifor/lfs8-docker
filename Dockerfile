@@ -55,3 +55,15 @@ RUN /src/expect
 COPY sources/dejagnu-1.6.tar.gz $LFS/sources/
 COPY src/dejagnu /src
 RUN /src/dejagnu
+
+COPY sources/check-0.11.0.tar.gz $LFS/sources/
+COPY src/check /src
+RUN /src/check
+
+COPY sources/ncurses-6.0.tar.gz $LFS/sources/
+COPY src/ncurses /src
+RUN /src/ncurses
+
+COPY sources/bash-4.4.tar.gz $LFS/sources/
+COPY src/bash /src
+RUN /src/bash
