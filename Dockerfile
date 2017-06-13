@@ -67,3 +67,23 @@ RUN /src/016-ncurses
 COPY sources/bash-4.4.tar.gz $LFS/sources/
 COPY src/017-bash /src
 RUN /src/017-bash
+
+COPY sources/bison-* $LFS/sources/
+COPY src/018-bison /src
+RUN /src/018-bison
+
+COPY sources/bzip2-*.tar.* $LFS/sources/
+COPY src/019-bzip2 /src
+RUN /src/019-bzip2
+
+COPY sources/coreutils-*.tar.* $LFS/sources/
+COPY src/020-coreutils /src
+RUN /src/020-coreutils
+
+COPY sources/diffutils-* $LFS/sources/
+COPY src/021-diffutils /src
+RUN /src/021-diffutils
+
+COPY sources/file-* $LFS/sources/
+COPY src/022-file /src
+RUN /src/022-file

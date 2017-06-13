@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/file-* -C /tmp/
+cd /tmp/file-*
+
+./configure --prefix=/tools
+make
+make install
+
+rm -rf /tmp/*

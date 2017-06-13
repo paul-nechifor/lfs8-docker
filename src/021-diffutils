@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/diffutils-* -C /tmp/
+cd /tmp/diffutils-*
+
+./configure --prefix=/tools
+make
+make install
+
+rm -rf /tmp/*
