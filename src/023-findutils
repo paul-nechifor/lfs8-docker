@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/findutils-* -C /tmp/
+cd /tmp/findutils-*
+
+echo '--- configure-old       2017-06-13 22:26:47.052325145 +0100
++++ configure   2017-06-13 22:26:56.200346179 +0100
+@@ -25170,7 +25170,7 @@
+ 
+   gl_abort_bug=no
+   case "'"\$"'host_os" in
+-    mingw*)
++    *)
+       gl_cv_func_getcwd_path_max=yes
+       ;;
+     *)
+' | patch configure
+./configure --prefix=/tools
+make
+make install
+
+rm -rf /tmp/*

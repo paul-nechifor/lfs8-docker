@@ -87,3 +87,15 @@ RUN /src/021-diffutils
 COPY sources/file-* $LFS/sources/
 COPY src/022-file /src
 RUN /src/022-file
+
+COPY sources/findutils-* $LFS/sources/
+COPY src/023-findutils /src
+RUN /src/023-findutils
+
+COPY sources/gawk-* $LFS/sources/
+COPY src/024-gawk /src
+RUN /src/024-gawk
+
+COPY sources/gettext-* $LFS/sources/
+COPY src/025-gettext /src
+RUN /src/025-gettext
