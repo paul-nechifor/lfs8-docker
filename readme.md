@@ -3,6 +3,10 @@
 An attempt at building [Linux from Scratch 8.0-systemd][lfs8book] by using
 Docker.
 
+## TODO
+
+- use docker commit instead of a Dockerfile so I can have access to privileged
+
 ## Usage
 
 1. Get the sources. This step is manual so that the rest of them can work

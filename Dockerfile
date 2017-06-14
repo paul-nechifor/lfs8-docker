@@ -143,3 +143,8 @@ RUN /src/035-util-linux
 COPY sources/xz-* $LFS/sources/
 COPY src/036-xz /src
 RUN /src/036-xz
+
+USER root
+
+COPY src/037-preparing-fs /src
+RUN /src/037-preparing-fs
