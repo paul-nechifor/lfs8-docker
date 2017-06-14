@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/grep-* -C /tmp/
+cd /tmp/grep-*
+
+./configure --prefix=/tools
+make
+make install
+
+rm -rf /tmp/*

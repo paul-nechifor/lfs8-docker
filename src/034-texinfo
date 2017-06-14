@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/texinfo-* -C /tmp/
+cd /tmp/texinfo-*
+
+./configure --prefix=/tools
+make
+make install
+
+rm -rf /tmp/*

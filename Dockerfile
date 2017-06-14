@@ -99,3 +99,47 @@ RUN /src/024-gawk
 COPY sources/gettext-* $LFS/sources/
 COPY src/025-gettext /src
 RUN /src/025-gettext
+
+COPY sources/grep-* $LFS/sources/
+COPY src/026-grep /src
+RUN /src/026-grep
+
+COPY sources/gzip-* $LFS/sources/
+COPY src/027-gzip /src
+RUN /src/027-gzip
+
+COPY sources/m4-* $LFS/sources/
+COPY src/028-m4 /src
+RUN /src/028-m4
+
+COPY sources/make-* $LFS/sources/
+COPY src/029-make /src
+RUN /src/029-make
+
+COPY sources/patch-* $LFS/sources/
+COPY src/030-patch /src
+RUN /src/030-patch
+
+COPY sources/perl-* $LFS/sources/
+COPY src/031-perl /src
+RUN /src/031-perl
+
+COPY sources/sed-* $LFS/sources/
+COPY src/032-sed /src
+RUN /src/032-sed
+
+COPY sources/tar-* $LFS/sources/
+COPY src/033-tar /src
+RUN /src/033-tar
+
+COPY sources/texinfo-* $LFS/sources/
+COPY src/034-texinfo /src
+RUN /src/034-texinfo
+
+COPY sources/util-linux-* $LFS/sources/
+COPY src/035-util-linux /src
+RUN /src/035-util-linux
+
+COPY sources/xz-* $LFS/sources/
+COPY src/036-xz /src
+RUN /src/036-xz

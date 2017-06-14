@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/gzip-* -C /tmp/
+cd /tmp/gzip-*
+
+./configure --prefix=/tools
+make
+make install
+
+rm -rf /tmp/*

@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+tar -xf "$LFS"/sources/util-linux-* -C /tmp/
+cd /tmp/util-linux-*
+
+./configure \
+    --prefix=/tools \
+    --without-python \
+    --disable-makeinstall-chown \
+    --without-systemdsystemunitdir \
+    --enable-libmount-force-mountinfo \
+    PKG_CONFIG=""
+
+rm -rf /tmp/*
