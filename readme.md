@@ -5,7 +5,8 @@ Docker.
 
 ## TODO
 
-- use docker commit instead of a Dockerfile so I can have access to privileged
+- Use docker commit instead of a Dockerfile so I can have access to privileged.
+- Make sure you never write to the docker fs, but locally instead (for speed).
 
 ## Usage
 
