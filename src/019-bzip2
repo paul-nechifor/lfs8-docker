@@ -1,9 +1,0 @@
-#!/bin/bash -e
-
-tar -xf "$LFS"/sources/bzip2-* -C /tmp/
-cd /tmp/bzip2-*
-
-make
-make PREFIX=/tools install
-
-rm -rf /tmp/*

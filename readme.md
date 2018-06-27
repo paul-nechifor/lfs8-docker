@@ -1,3 +1,7 @@
+# This repository has been moved to [gitlab.com/paul-nechifor/lfs8-docker](http://gitlab.com/paul-nechifor/lfs8-docker).
+
+Old readme:
+
 # LFS8 Docker
 
 An attempt at building [Linux from Scratch 8.0-systemd][lfs8book] by using
